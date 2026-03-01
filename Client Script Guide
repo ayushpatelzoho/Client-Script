@@ -1,0 +1,10 @@
+// To get and set value of any page field
+ZDK.Page.getField('FieldAPIName').setValue(null);
+// Search in any module
+var variableName = await ZDK.Apps.CRM.ModuleAPINameHere.searchByCriteria("(FieldAPINameHere:equals:" + ValueToBeSearchedForThisField + ")");
+// Search with 2 field values
+var variableName = await ZDK.Apps.CRM.ModuleAPINameHere.searchByCriteria("((FieldAPINameHere:equals:" + ValueToBeSearchedForThisField + ")and(FieldAPINameHere:equals:" + "ValueToBeSearchedForThisField" + "))");
+// To show any alert message
+ZDK.Client.showAlert('AlertMessageHere');
+// Open Create Lead page in the another tab and also pass the data of any fields
+ZDK.Client.navigateTo('record_create', { module: 'Leads', custom_data: {FieldAPINameHere: ValueToBeAutoFilled} }, '_blank');
